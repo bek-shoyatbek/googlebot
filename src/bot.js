@@ -3,6 +3,7 @@ import * as dotenv from "dotenv";
 
 import handlers from "./handlers/index.js";
 
+
 dotenv.config();
 
 const TOKEN = process.env.TOKEN;
@@ -17,10 +18,13 @@ bot.command("start", async (ctx) => {
 
 });
 
+bot.hears(/^google/, handlers.handleSearch);
 
-bot.hears(/^google/i, handlers.handleUserRequest)
+bot.hears(/^bing/, handlers.handleSearch);
 
-bot.command("google", handlers.handleUserRequest);
+bot.command("google", handlers.handleSearch);
+
+bot.command("bing", handlers.handleSearch)
 
 bot.on("inline_query", handlers.handleInlineQuery);
 

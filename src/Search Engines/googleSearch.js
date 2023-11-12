@@ -26,7 +26,7 @@ export const googleSearchResultParams = {
  */
 const googleSearch = async (query) => {
     try {
-        const response = await axios.get('https://www.googleapis.com/customsearch/v1', {
+        const response = await axios.get(process.env.GOOGLE_ENDPOINT, {
             params: {
                 key: process.env.GOOGLE_API_KEY,
                 cx: process.env.SEARCH_ENGINE_ID,

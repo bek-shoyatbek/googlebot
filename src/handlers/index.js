@@ -1,8 +1,8 @@
 import handleBotError from "./handleBotError.js";
 
-import handleUserRequest from "./handleRequest.js";
+import handleSearch from "./handleSearch.js";
 
 import handleInlineQuery from "./handleInlineQuery.js";
 
 
-export default { handleBotError, handleUserRequest, handleInlineQuery }
+export default { handleBotError, handleSearch, handleInlineQuery }

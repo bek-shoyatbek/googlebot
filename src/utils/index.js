@@ -1,7 +1,10 @@
 import buildUrl from "./urlBuilder.js";
-import googleSearch from "./googleSearch.js";
 import formatText from "./formatText.js";
 import escapeHTML from "./escapeHTML.js";
+import engines from "./engines.js";
+import makeSearchResultsSolid from "./makeSearchResultSendable.js";
 
 
-export default { buildUrl, googleSearch, formatText, escapeHTML };
+
+
+export default { buildUrl, formatText, escapeHTML, engines, makeSearchResultsSolid };
