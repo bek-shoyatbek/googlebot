@@ -6,11 +6,9 @@ import search from "../Search Engines/index.js";
 
 async function handleSearch(ctx) {
 
-    const searchEngine = ctx.message.text.split(" ")[0].slice(1);
+    const searchEngine = ctx.message.text.split(" ")[0].replace(/\W/g, "");
 
     const textToSearch = ctx.message.text.split(" ").slice(1).join(" ");
-
-    console.log(searchEngine, textToSearch);
 
     if (!textToSearch) {
         await ctx.reply("Please enter a search term");
@@ -24,6 +22,7 @@ async function handleSearch(ctx) {
         }
     );
 
+    console.log(searchEngine, textToSearch);
 
     let results;
     if (searchEngine == utils.engines.google) {
@@ -31,7 +30,6 @@ async function handleSearch(ctx) {
     } else if (searchEngine == utils.engines.bing) {
         results = await search.bingSearch(textToSearch);
     }
-
 
     results = utils.makeSearchResultsSolid(results, searchEngine);
 

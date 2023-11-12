@@ -3,20 +3,6 @@ import axios from "axios";
 
 config();
 
-const googleSearchResultParams = {
-    kind: 'customsearch#result',
-    title: 'What Is JavaScript & What Is It Used For? A Basic Guide to JS',
-    htmlTitle: '<b>What Is JavaScript</b> &amp; What Is It Used For? A Basic Guide to <b>JS</b>',
-    link: 'https://www.semrush.com/blog/javascript/',
-    displayLink: 'www.semrush.com',
-    snippet: 'Mar 21, 2023 ... What Is JavaScript and Why Is It used? JavaScript is a computer programming language commonly used to add dynamism and interactivity to webpages ...',
-    htmlSnippet: 'Mar 21, 2023 <b>...</b> <b>What Is JavaScript</b> and Why Is It used? <b>JavaScript</b> is a computer programming language commonly used to add dynamism and interactivity to webpages&nbsp;...',
-    cacheId: 'wmwvg6REMpIJ',
-    formattedUrl: 'https://www.semrush.com/blog/javascript/',
-    htmlFormattedUrl: 'https://www.semrush.com/blog/javascript/',
-    pagemap: { cse_thumbnail: [Array], metatags: [Array], cse_image: [Array] }
-}
-
 const bingSearchResultParams = {
     id: 'https://api.bing.microsoft.com/api/v7/#WebPages.2',
     name: 'Facts about cats: Domestication, breeds and behavior - Live Science',
@@ -52,7 +38,7 @@ const bingSearch = async (query, mkt = 'en-US') => {
                 'Ocp-Apim-Subscription-Key': process.env.BING_API_KEY
             },
             params: {
-                q: encodeURIComponent(query),
+                q: query,
                 mkt
             },
         });
