@@ -9,8 +9,10 @@ import { googleSearchResultParams } from "../Search Engines/googleSearch.js";
 const formatMessage = (items) => {
     let formattedText = "";
     for (let item of items) {
-        const { title, link, snippet } = item;
-        formattedText += `<b>${escapeHTML(title)}</b>\n<b>${escapeHTML(snippet).slice(0, 512)}</b> \n <b>link</b>: ${link}\n\n`
+        let { title, link, snippet } = item;
+        title = escapeHTML(title).split(" ").slice(0, 25).join(" ");
+        snippet = escapeHTML(snippet).split(" ").slice(0, 60).join(" ");
+        formattedText += `<b>${title}</b>\n<b>${escapeHTML(snippet)}</b> \n <b>link</b>: ${link}\n\n`
     }
     return formattedText;
 }
