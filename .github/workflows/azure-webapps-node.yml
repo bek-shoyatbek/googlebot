@@ -52,8 +52,6 @@ jobs:
       with:
         name: node-app
         path: .
-    - name: AI Code Review Action
-      uses: freeedcom/ai-codereviewer@v2.6.0
 
   deploy:
     permissions:
