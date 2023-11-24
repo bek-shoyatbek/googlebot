@@ -20,7 +20,8 @@
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:
+  pull_request:
+    branches: [ "main" ]
 
 env:
   AZURE_WEBAPP_NAME: qsotbot    # set this to your application's name
@@ -53,6 +54,8 @@ jobs:
       with:
         name: node-app
         path: .
+    - name: AI Code Review Action
+      uses: freeedcom/ai-codereviewer@v2.6.0
 
   deploy:
     permissions:
