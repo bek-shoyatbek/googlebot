@@ -17,7 +17,13 @@ npm install
 mv .env.example .env
 ```
 
-and replace example env with yours
+And replace example env with yours
+
+### For development
+```bash
+npm run dev
+```
+
 
 ## Bot usage
 ### You can use qsotbot in private as well as on public group
