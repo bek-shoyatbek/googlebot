@@ -24,6 +24,11 @@ And replace example env with yours
 npm run dev
 ```
 
+### For production
+```bash
+npm run start
+```
+
 
 ## Bot usage
 ### You can use qsotbot in private as well as on public group
